@@ -121,8 +121,8 @@ cd streamvault
 npm install
 
 # 3. Create environment file
-cp .env.example .env.local
-# Then open .env.local and fill in ALL the values from Step 1
+cp .env.example ..env.local
+# Then open ..env.local and fill in ALL the values from Step 1
 
 # 4. Run development server
 npm run dev

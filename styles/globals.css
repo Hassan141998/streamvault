@@ -23,19 +23,20 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-a { text-decoration: none; }
-button { font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
 input, textarea { font-family: inherit; }
 input::placeholder { color: #334155; }
 
 ::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-thumb { background: rgba(244,58,9,0.4); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(244,58,9,0.5); border-radius: 2px; }
 
-@keyframes fadeIn  { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-@keyframes slideUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-@keyframes pulse2  { 0%,100%{opacity:1} 50%{opacity:0.35} }
+@keyframes fadeIn  { from{opacity:0;transform:translateY(8px)}  to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse2  { 0%,100%{opacity:1} 50%{opacity:0.3} }
 @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+@keyframes spin    { to{transform:rotate(360deg)} }
 
-.animate-fadeIn  { animation: fadeIn  0.25s ease both; }
-.hide-scrollbar  { scrollbar-width:none; -ms-overflow-style:none; }
+.animate-fadeIn { animation: fadeIn 0.3s ease both; }
+.hide-scrollbar { scrollbar-width:none; -ms-overflow-style:none; }
 .hide-scrollbar::-webkit-scrollbar { display:none; }

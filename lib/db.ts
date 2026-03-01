@@ -1,4 +1,4 @@
-// lib/db.ts — Safe Neon DB. Never crashes if DATABASE_URL is missing.
+// lib/db.ts — Safe Neon DB wrapper. Never crashes if DATABASE_URL is missing.
 let _sql: any = null;
 
 function getSQL() {
@@ -11,11 +11,11 @@ function getSQL() {
   } catch { return null; }
 }
 
-export async function dbQuery(strings: TemplateStringsArray, ...values: any[]): Promise<any[]> {
+export async function db(strings: TemplateStringsArray, ...vals: any[]): Promise<any[]> {
   const sql = getSQL();
   if (!sql) return [];
-  try { return await sql(strings, ...values); }
-  catch (e: any) { console.error("DB:", e?.message); return []; }
+  try { return await sql(strings, ...vals); }
+  catch (e: any) { console.error("[DB]", e?.message); return []; }
 }
 
 export const hasDB = () => !!process.env.DATABASE_URL;

@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["image.tmdb.org", "images.unsplash.com"],
+    domains: ["image.tmdb.org"],
+  },
+  experimental: {
+    serverComponentsExternalPackages: ["bcryptjs"],
   },
 };
-
-module.exports = nextConfig;
